@@ -1,0 +1,13 @@
+- hosts: xl
+  become: true
+
+  tasks:
+    - name: create www dir in opt
+      file:
+        path: /opt/testansible/www
+        state: directory
+
+    - name: Delete content & directory
+      file:
+        state: absent
+        path: /opt/testansible/www
